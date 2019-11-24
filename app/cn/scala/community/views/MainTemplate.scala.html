@@ -1,0 +1,17 @@
+@this(assetsFinder: AssetsFinder)
+@(title: String, projectName: String)
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@title</title>
+        @* <link rel="stylesheet" media="screen" href="@assetsFinder.path("stylesheets/main.css")">*@
+        <link rel="shortcut icon" href="@assetsFinder.path("images/favicon.png")">
+    </head>
+    <body>
+        <div id="body"></div>
+        <script src="@(Seq(s"$projectName-opt-bundle.js", s"$projectName-fastopt-bundle.js")
+                .find(name => getClass.getResource(s"/public/$name") != null)
+                .map(assetsFinder.path)
+                )"></script>
+    </body>
+</html>
