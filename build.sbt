@@ -28,6 +28,5 @@ lazy val ScalaCommunityCN = project
     scalaJSProjects := Seq(CommunityUI),
     pipelineStages in Assets := Seq(scalaJSPipeline),
     pipelineStages := Seq(digest, gzip),
-    ivyLoggingLevel := UpdateLogging.Quiet,
     libraryDependencies ++= macwire
   )

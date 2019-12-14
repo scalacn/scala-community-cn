@@ -17,11 +17,12 @@ libraryDependencies ++= Seq(
 scalaJSUseMainModuleInitializer := true
 //    webpackBundlingMode := BundlingMode.LibraryOnly(),
 //    emitSourceMaps := false,
-//webpackConfigFile in fastOptJS := Some(baseDirectory.value / "dev.webpack.config.js")
+webpackConfigFile in fastOptJS := Some(baseDirectory.value / "dev.webpack.config.js")
 // Use a different Webpack configuration file for production
-//webpackConfigFile in fullOptJS := Some(baseDirectory.value / "prod.webpack.config.js")
+webpackConfigFile in fullOptJS := Some(baseDirectory.value / "prod.webpack.config.js")
 // Use the shared Webpack configuration file for reload workflow and for running the tests
-//webpackConfigFile in Test := Some(baseDirectory.value / "common.webpack.config.js")
+webpackConfigFile in Test := Some(baseDirectory.value / "common.webpack.config.js")
+
 npmDevDependencies in Compile ++= Seq(
   "webpack-merge" -> "4.2.1",
   "image-webpack-loader" -> "4.6.0",
@@ -34,5 +35,7 @@ npmDevDependencies in Compile ++= Seq(
 )
 npmDependencies in Compile ++= Seq(
   "react" -> reactVersion,
-  "react-dom" -> reactVersion
+  "react-dom" -> reactVersion,
+  "materialize-css" -> "1.0.0",
+  "@fortawesome/fontawesome-free" -> "5.7.2"
 )

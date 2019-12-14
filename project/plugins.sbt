@@ -1,6 +1,6 @@
 lazy val bundlerVersion = "0.15.0-0.6"
 
-addSbtPlugin("com.typesafe.play" % "sbt-plugin"              % "2.7.3")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin"              % "2.8.0")
 addSbtPlugin("org.scalameta"     % "sbt-scalafmt"            % "2.2.1")
 addSbtPlugin("ch.epfl.scala"     % "sbt-scalajs-bundler"     % bundlerVersion)
 addSbtPlugin("ch.epfl.scala"     % "sbt-web-scalajs-bundler" % bundlerVersion)
